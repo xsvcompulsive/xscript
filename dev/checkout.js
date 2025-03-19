@@ -1,9 +1,8 @@
-const itemTypes = JSON.parse(sessionStorage.getItem("item_type") || "[]");
+const itemTypes = new Storage();
+
 const template = document.querySelector(".checkout_item");
 
-console.log(itemTypes);
-
-itemTypes.forEach(item => {
+itemTypes.list.forEach(item => {
     const clone = template.cloneNode(true);
     clone.hidden = false;
     clone.textContent = item;
